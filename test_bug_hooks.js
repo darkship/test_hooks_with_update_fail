@@ -13,12 +13,28 @@ item.attachSchema(new SimpleSchema({
 
 item.before.insert(function(userId, doc) {
   console.log('function before insert')
+  item2.update(value, {
+    $set: {
+      title: "titlevalue"
+    }
+  }, function(err) {
+    if (err)
+      console.error(err)
+  })
 })
 item.after.insert(function(userId, doc) {
   console.log('function after insert')
 })
 item.before.remove(function(userId, doc) {
   console.log('function before remove')
+  item2.update(value, {
+    $set: {
+      title: "titlevalue"
+    }
+  }, function(err) {
+    if (err)
+      console.error(err)
+  })
 })
 item.after.remove(function(userId, doc) {
   console.log('function after remove')
